@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp - Online Training Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">Skill<span>Up.</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#catalogue">Courses</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="login-btn">Login / Register</button>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Upgrade Your Skills.<br>
+            Build Your Future.</h1>
+
+        <p>
+            Discover professional courses and learn from
+            industry experts. Start your learning journey today.
+        </p>
+
+        <a href="#catalogue" class="hero-btn">
+            Explore Courses
+        </a>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+    <h2>Explore Categories</h2>
+
+    <div class="category-list">
+        <button onclick="filterCategory('All')">All</button>
+        <button onclick="filterCategory('Programming')">Programming</button>
+        <button onclick="filterCategory('Design')">Design</button>
+        <button onclick="filterCategory('Business')">Business</button>
+        <button onclick="filterCategory('Marketing')">Marketing</button>
+        <button onclick="filterCategory('Data Science')">Data Science</button>
+    </div>
+</section>
+
+<!-- COURSE CATALOGUE -->
+<section class="catalogue" id="catalogue">
+
+    <div class="section-heading">
+        <div>
+            <h2>Our Course Catalogue</h2>
+            <p>Choose the right course to achieve your goals.</p>
+        </div>
+    </div>
+
+    <!-- SEARCH AND SORT -->
+    <div class="toolbar">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search courses, instructors..."
+        >
+
+        <select id="sortSelect">
+            <option value="default">Sort By</option>
+            <option value="priceLow">Price: Low to High</option>
+            <option value="priceHigh">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="name">Course Name</option>
+            <option value="duration">Duration</option>
+        </select>
+
+    </div>
+
+    <div class="catalogue-layout">
+
+        <!-- FILTER SIDEBAR -->
+        <aside class="filters">
+
+            <h3>Filters</h3>
+
+            <div class="filter-group">
+                <h4>Category</h4>
+
+                <label>
+                    <input type="checkbox" class="categoryFilter"
+                        value="Programming"> Programming
+                </label>
+
+                <label>
+                    <input type="checkbox" class="categoryFilter"
+                        value="Design"> Design
+                </label>
+
+                <label>
+                    <input type="checkbox" class="categoryFilter"
+                        value="Business"> Business
+                </label>
+
+                <label>
+                    <input type="checkbox" class="categoryFilter"
+                        value="Marketing"> Marketing
+                </label>
+
+                <label>
+                    <input type="checkbox" class="categoryFilter"
+                        value="Data Science"> Data Science
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Difficulty Level</h4>
+
+                <label>
+                    <input type="checkbox" class="levelFilter"
+                        value="Beginner"> Beginner
+                </label>
+
+                <label>
+                    <input type="checkbox" class="levelFilter"
+                        value="Intermediate"> Intermediate
+                </label>
+
+                <label>
+                    <input type="checkbox" class="levelFilter"
+                        value="Advanced"> Advanced
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Maximum Price</h4>
+
+                <input type="range" id="priceRange"
+                    min="0" max="5000" value="5000">
+
+                <p>Up to ₹<span id="priceValue">5000</span></p>
+            </div>
+
+            <button class="reset-btn" onclick="resetFilters()">
+                Reset Filters
+            </button>
+
+        </aside>
+
+        <!-- COURSE DISPLAY -->
+        <div class="course-section">
+
+            <p id="courseCount"></p>
+
+            <div class="course-grid" id="courseGrid"></div>
+
+            <button id="loadMore" class="load-btn">
+                Load More Courses
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2>Why Choose SkillUp?</h2>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+            <h3>Expert Trainers</h3>
+            <p>Learn from experienced industry professionals.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>Flexible Learning</h3>
+            <p>Learn anytime and anywhere at your own pace.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>Certification</h3>
+            <p>Receive certificates after completing courses.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>Affordable Courses</h3>
+            <p>Get quality education at affordable prices.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <h2>SkillUp Online Training Center</h2>
+    <p>Learn Today. Lead Tomorrow.</p>
+    <p>Email: info@skillup.com</p>
+    <p>© 2026 SkillUp. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
